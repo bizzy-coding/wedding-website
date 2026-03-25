@@ -6,13 +6,22 @@
   background: var(--bg-hero);
   position: relative;
   overflow: hidden;
-  text-align: center;
-  padding: 80px 24px;
+  padding: 100px 24px 80px;
+}
+
+.hero__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  max-width: 1000px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
 }
 
 .hero__content {
-  position: relative;
-  z-index: 1;
+  text-align: left;
 }
 
 .hero__save-the-date {
@@ -24,17 +33,17 @@
 
 .hero__title {
   font-family: var(--font-body);
-  font-size: 52px;
-  font-weight: 800;
+  font-size: 48px;
+  font-weight: 900;
   text-transform: uppercase;
   color: var(--sage-700);
-  letter-spacing: -1px;
-  line-height: 1.1;
+  letter-spacing: 0.02em;
+  line-height: 1.15;
   margin-bottom: 24px;
 }
 
 .hero__subtitle {
-  font-size: 48px;
+  font-size: 44px;
 }
 
 .hero__date {
@@ -75,6 +84,21 @@
   color: var(--sage-100);
 }
 
+/* Photo */
+.hero__photo {
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+  max-height: 520px;
+}
+
+.hero__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+}
+
 /* Hand-drawn doodles */
 .hero__doodle {
   position: absolute;
@@ -83,41 +107,66 @@
 }
 
 .hero__doodle--champagne {
-  top: 18%;
-  left: 8%;
+  top: 12%;
+  left: 3%;
   transform: rotate(-15deg);
 }
 
 .hero__doodle--ring {
-  bottom: 25%;
-  right: 10%;
+  bottom: 8%;
+  right: 4%;
   transform: rotate(10deg);
 }
 
 @media (max-width: 768px) {
+  .hero {
+    padding: 100px 20px 60px;
+  }
+
+  .hero__inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .hero__content {
+    text-align: center;
+  }
+
   .hero__title {
     font-size: 32px;
   }
+
   .hero__subtitle {
     font-size: 30px;
   }
+
   .hero__save-the-date {
     font-size: 26px;
   }
+
   .hero__date {
     font-size: 22px;
   }
+
   .hero__venue {
     font-size: 20px;
   }
+
+  .hero__photo {
+    max-height: 400px;
+    margin: 0 auto;
+    max-width: 320px;
+  }
+
   .hero__doodle--champagne {
-    top: 12%;
-    left: 3%;
+    top: 8%;
+    left: 2%;
     width: 40px;
   }
+
   .hero__doodle--ring {
-    bottom: 18%;
-    right: 3%;
+    bottom: 5%;
+    right: 2%;
     width: 35px;
   }
 }

@@ -3,20 +3,26 @@ import './Hero.css'
 export default function Hero() {
   return (
     <section className="hero">
-      <div className="hero__content">
-        <p className="hero__save-the-date">Save the Date</p>
-        <h1 className="hero__title">
-          Anna & Merdz<br />
-          <span className="hero__subtitle">are getting married!</span>
-        </h1>
-        <p className="hero__date">Saturday 21st August 2027</p>
-        <p className="hero__venue">Wyresdale Park, Scorton</p>
-        <div className="hero__heart">
-          <svg width="32" height="28" viewBox="0 0 32 28" fill="none" stroke="currentColor" strokeWidth="1.5">
-            <path d="M16 26s-12-7.5-12-15C4 5.5 7.5 2 11 2c2.5 0 4.5 1.5 5 3 .5-1.5 2.5-3 5-3 3.5 0 7 3.5 7 9 0 7.5-12 15-12 15z" />
-          </svg>
+      <div className="hero__inner">
+        <div className="hero__content">
+          <p className="hero__save-the-date">Save the Date</p>
+          <h1 className="hero__title">
+            Anna & Merdz<br />
+            <span className="hero__subtitle">are getting married!</span>
+          </h1>
+          <p className="hero__date">Saturday 21st August 2027</p>
+          <p className="hero__venue">Wyresdale Park, Scorton</p>
+          <div className="hero__heart">
+            <svg width="32" height="28" viewBox="0 0 32 28" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <path d="M16 26s-12-7.5-12-15C4 5.5 7.5 2 11 2c2.5 0 4.5 1.5 5 3 .5-1.5 2.5-3 5-3 3.5 0 7 3.5 7 9 0 7.5-12 15-12 15z" />
+            </svg>
+          </div>
+          <a href="#rsvp" className="hero__cta">RSVP</a>
         </div>
-        <a href="#rsvp" className="hero__cta">RSVP</a>
+
+        <div className="hero__photo">
+          <img src="/Images/e51e1a9c-0ef5-42b8-bed1-3bfffcca08d7.JPG" alt="Anna and Merdz - the proposal in Cuba" />
+        </div>
       </div>
 
       {/* Hand-drawn decorations */}

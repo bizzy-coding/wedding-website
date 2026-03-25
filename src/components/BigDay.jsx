@@ -38,11 +38,6 @@ export default function BigDay() {
             <p className="bigday__detail">Formal</p>
           </div>
         </div>
-
-        <div className="bigday__notes">
-          <p>If you are bringing confetti please ensure it is petals, leaves or dried flowers.</p>
-          <p>The bar runs a card only bar so cash will not be accepted on the day.</p>
-        </div>
       </section>
     </div>
   )
