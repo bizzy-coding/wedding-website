@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm create:*)",
+      "Bash(mv wedding-temp/* wedding-temp/.* .)",
+      "Bash(npm install:*)",
+      "Bash(find /Users/Biz/Documents/Coding/Wedding-Website -name *.jpg -o -name *.jpeg -o -name *.png -o -name *.webp -o -name *.svg -o -name *.heic)",
+      "Bash(sips -s format jpeg /Users/Biz/Documents/Coding/Wedding-Website/public/Images/IMG_3223.HEIC --out /Users/Biz/Documents/Coding/Wedding-Website/public/Images/IMG_3223.jpg)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(git init:*)",
+      "Bash(.gitignore:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
+    ]
+  }
+}

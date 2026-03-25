@@ -1,0 +1,123 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-hero);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding: 80px 24px;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero__save-the-date {
+  font-family: var(--font-accent);
+  font-size: 32px;
+  color: var(--sage-700);
+  margin-bottom: 8px;
+}
+
+.hero__title {
+  font-family: var(--font-body);
+  font-size: 52px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--sage-700);
+  letter-spacing: -1px;
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+.hero__subtitle {
+  font-size: 48px;
+}
+
+.hero__date {
+  font-family: var(--font-accent);
+  font-size: 28px;
+  color: var(--sage-700);
+  margin-bottom: 4px;
+}
+
+.hero__venue {
+  font-family: var(--font-accent);
+  font-size: 24px;
+  color: var(--sage-600);
+  margin-bottom: 20px;
+}
+
+.hero__heart {
+  color: var(--sage-700);
+  margin-bottom: 32px;
+}
+
+.hero__cta {
+  display: inline-block;
+  padding: 14px 48px;
+  background: var(--sage-700);
+  color: var(--sage-100);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.hero__cta:hover {
+  background: var(--sage-600);
+  color: var(--sage-100);
+}
+
+/* Hand-drawn doodles */
+.hero__doodle {
+  position: absolute;
+  color: var(--sage-700);
+  opacity: 0.6;
+}
+
+.hero__doodle--champagne {
+  top: 18%;
+  left: 8%;
+  transform: rotate(-15deg);
+}
+
+.hero__doodle--ring {
+  bottom: 25%;
+  right: 10%;
+  transform: rotate(10deg);
+}
+
+@media (max-width: 768px) {
+  .hero__title {
+    font-size: 32px;
+  }
+  .hero__subtitle {
+    font-size: 30px;
+  }
+  .hero__save-the-date {
+    font-size: 26px;
+  }
+  .hero__date {
+    font-size: 22px;
+  }
+  .hero__venue {
+    font-size: 20px;
+  }
+  .hero__doodle--champagne {
+    top: 12%;
+    left: 3%;
+    width: 40px;
+  }
+  .hero__doodle--ring {
+    bottom: 18%;
+    right: 3%;
+    width: 35px;
+  }
+}

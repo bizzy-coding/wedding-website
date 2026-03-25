@@ -1,0 +1,17 @@
+.gifts__content {
+  text-align: center;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.gifts__icon {
+  color: var(--sage-600);
+  margin-bottom: 20px;
+}
+
+.gifts__content p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text);
+  margin-bottom: 12px;
+}

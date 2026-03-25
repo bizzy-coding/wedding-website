@@ -1,0 +1,61 @@
+:root {
+  /* Palette */
+  --sage-100: #D3DACF;
+  --sage-200: #BAC7B6;
+  --sage-300: #8D9E87;
+  --sage-400: #72856D;
+  --sage-600: #36493D;
+  --sage-700: #2E3F35;
+
+  /* Semantic */
+  --bg: #f5f5f0;
+  --bg-hero: var(--sage-200);
+  --bg-section: #ffffff;
+  --bg-section-alt: var(--sage-100);
+  --text: var(--sage-600);
+  --text-light: var(--sage-400);
+  --text-heading: var(--sage-700);
+  --accent: var(--sage-600);
+  --border: var(--sage-200);
+
+  /* Fonts */
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-accent: 'Caveat', cursive;
+
+  font-family: var(--font-body);
+  color: var(--text);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+h1, h2, h3 {
+  color: var(--text-heading);
+  line-height: 1.2;
+}

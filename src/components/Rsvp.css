@@ -1,0 +1,159 @@
+.rsvp__deadline {
+  text-align: center;
+  font-family: var(--font-accent);
+  font-size: 20px;
+  color: var(--sage-600);
+  margin-bottom: 40px;
+}
+
+.rsvp__form {
+  max-width: 480px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.rsvp__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.rsvp__field label {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--sage-600);
+}
+
+.rsvp__field input,
+.rsvp__field select,
+.rsvp__field textarea {
+  padding: 12px 16px;
+  border: 1.5px solid var(--sage-200);
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--text-heading);
+  background: white;
+  transition: border-color 0.2s;
+  outline: none;
+}
+
+.rsvp__field input:focus,
+.rsvp__field select:focus,
+.rsvp__field textarea:focus {
+  border-color: var(--sage-400);
+}
+
+.rsvp__field input::placeholder {
+  color: var(--sage-300);
+}
+
+.rsvp__radio-group {
+  display: flex;
+  gap: 12px;
+}
+
+.rsvp__radio {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 16px;
+  border: 1.5px solid var(--sage-200);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  color: var(--text) !important;
+  transition: all 0.2s;
+}
+
+.rsvp__radio input {
+  display: none;
+}
+
+.rsvp__radio--active {
+  border-color: var(--sage-600);
+  background: var(--sage-100);
+  color: var(--sage-700) !important;
+}
+
+.rsvp__radio:hover {
+  border-color: var(--sage-400);
+}
+
+.rsvp__fieldset {
+  border: 1.5px solid var(--sage-200);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.rsvp__fieldset legend {
+  font-family: var(--font-accent);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--sage-600);
+  padding: 0 8px;
+}
+
+.rsvp__submit {
+  padding: 16px 48px;
+  background: var(--sage-700);
+  color: var(--sage-100);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-top: 8px;
+}
+
+.rsvp__submit:hover {
+  background: var(--sage-600);
+}
+
+.rsvp__submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.rsvp__error {
+  text-align: center;
+  color: #b44;
+  font-size: 14px;
+}
+
+.rsvp__success {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.rsvp__success svg {
+  color: var(--sage-600);
+  margin-bottom: 20px;
+}
+
+.rsvp__success p {
+  font-size: 16px;
+  color: var(--text);
+  line-height: 1.8;
+}
+
+@media (max-width: 480px) {
+  .rsvp__radio-group {
+    flex-direction: column;
+  }
+}
