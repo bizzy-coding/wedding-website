@@ -3,19 +3,10 @@ import './Rsvp.css'
 
 const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyaOyDfAuHX2uqmbu_lE376957c3RIZFsTMXuCWppSK1j_LqAEJLEud85tYCajm67Lw/exec'
 
-const mealOptions = [
-  'Chicken',
-  'Beef',
-  'Vegetarian',
-  'Vegan',
-]
-
-export default function Rsvp() {
+export default function EveningRsvp() {
   const [form, setForm] = useState({
     firstName: '',
     lastName: '',
-    dietary: '',
-    mealChoice: '',
   })
   const [status, setStatus] = useState('idle')
 
@@ -27,7 +18,7 @@ export default function Rsvp() {
     e.preventDefault()
     setStatus('sending')
 
-    const payload = { ...form, guestType: 'day' }
+    const payload = { ...form, guestType: 'evening' }
 
     if (!GOOGLE_SCRIPT_URL) {
       setTimeout(() => setStatus('success'), 1000)
@@ -49,26 +40,27 @@ export default function Rsvp() {
 
   if (status === 'success') {
     return (
-      <div className="section-wrap section-wrap--white" id="rsvp">
-        <section className="section">
-          <div className="rsvp__success">
-            <svg width="56" height="56" viewBox="0 0 56 56" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="28" cy="28" r="24" />
-              <path d="M18 28l7 7 13-13" />
-            </svg>
-            <h2 className="section-heading">Thank You!</h2>
-            <p>We&rsquo;ve received your RSVP. We can&rsquo;t wait to celebrate with you!</p>
-          </div>
-        </section>
+      <div className="evening-rsvp">
+        <div className="rsvp__success">
+          <svg width="56" height="56" viewBox="0 0 56 56" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="28" cy="28" r="24" />
+            <path d="M18 28l7 7 13-13" />
+          </svg>
+          <h2 className="section-heading">Thank You!</h2>
+          <p>We&rsquo;ve received your RSVP. See you in the evening!</p>
+        </div>
       </div>
     )
   }
 
   return (
-    <div className="section-wrap section-wrap--white" id="rsvp">
-      <section className="section">
-        <p className="section-title">RSVP</p>
-        <h2 className="section-heading">RSVP</h2>
+    <div className="evening-rsvp">
+      <div className="evening-rsvp__card">
+        <h1 className="evening-rsvp__logo">A & M</h1>
+        <h2 className="section-heading">Evening RSVP</h2>
+        <p className="evening-rsvp__intro">
+          We&rsquo;d love for you to join us for the evening celebration!
+        </p>
 
         <form className="rsvp__form" onSubmit={handleSubmit}>
           <div className="rsvp__field">
@@ -87,26 +79,6 @@ export default function Rsvp() {
             />
           </div>
 
-          <div className="rsvp__field">
-            <input
-              name="dietary" type="text"
-              value={form.dietary} onChange={handleChange}
-              placeholder="DIETARY"
-            />
-          </div>
-
-          <div className="rsvp__field">
-            <select
-              name="mealChoice" required
-              value={form.mealChoice} onChange={handleChange}
-            >
-              <option value="">MEAL SELECTION</option>
-              {mealOptions.map(m => (
-                <option key={m} value={m}>{m}</option>
-              ))}
-            </select>
-          </div>
-
           <p className="rsvp__deadline">Please RSVP before 1st April 2027</p>
 
           <button
@@ -118,10 +90,10 @@ export default function Rsvp() {
           </button>
 
           {status === 'error' && (
-            <p className="rsvp__error">Something went wrong. Please try again or contact us directly.</p>
+            <p className="rsvp__error">Something went wrong. Please try again.</p>
           )}
         </form>
-      </section>
+      </div>
     </div>
   )
 }

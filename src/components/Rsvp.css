@@ -1,9 +1,8 @@
 .rsvp__deadline {
   text-align: center;
-  font-family: var(--font-accent);
-  font-size: 20px;
-  color: var(--sage-600);
-  margin-bottom: 40px;
+  font-size: 14px;
+  color: var(--text-light);
+  margin: 8px 0;
 }
 
 .rsvp__form {
@@ -156,4 +155,46 @@
   .rsvp__radio-group {
     flex-direction: column;
   }
+}
+
+/* Evening RSVP standalone page */
+.evening-rsvp {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-hero);
+  padding: 40px 24px;
+}
+
+.evening-rsvp__card {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+  padding: 48px 40px;
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+}
+
+.evening-rsvp__logo {
+  font-family: var(--font-accent);
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--sage-700);
+  margin-bottom: 8px;
+}
+
+.evening-rsvp__intro {
+  font-size: 15px;
+  color: var(--text);
+  margin-bottom: 32px;
+  line-height: 1.7;
+}
+
+.evening-rsvp .rsvp__form {
+  max-width: 100%;
+}
+
+.evening-rsvp .rsvp__success {
+  padding: 0;
 }

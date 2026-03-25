@@ -16,7 +16,13 @@
       "Bash(git push:*)",
       "Bash(npx netlify:*)",
       "Bash(npm run:*)",
-      "Bash(npx netlify-cli:*)"
+      "Bash(npx netlify-cli:*)",
+      "Bash(curl -s -L -o /dev/null -w \"%{http_code}\" -X POST \"https://script.google.com/macros/s/AKfycbyUOhMO15obJ06GNDNXvZCjxdRQjbth8FJiFxk-J985s7G9_BIlCMLJiKwoDDvYy5I/exec\" -H \"Content-Type: application/json\" -d '{\"\"guestType\"\":\"\"day\"\",\"\"firstName\"\":\"\"Test\"\",\"\"lastName\"\":\"\"Guest\"\",\"\"dietary\"\":\"\"None\"\",\"\"mealChoice\"\":\"\"Chicken\"\"}')",
+      "Bash(curl -s -L -X POST \"https://script.google.com/macros/s/AKfycbyUOhMO15obJ06GNDNXvZCjxdRQjbth8FJiFxk-J985s7G9_BIlCMLJiKwoDDvYy5I/exec\" -H \"Content-Type: application/json\" -d '{\"\"guestType\"\":\"\"day\"\",\"\"firstName\"\":\"\"Test\"\",\"\"lastName\"\":\"\"Guest\"\",\"\"dietary\"\":\"\"None\"\",\"\"mealChoice\"\":\"\"Chicken\"\"}')",
+      "Bash(curl -v -L -X POST \"https://script.google.com/macros/s/AKfycbyUOhMO15obJ06GNDNXvZCjxdRQjbth8FJiFxk-J985s7G9_BIlCMLJiKwoDDvYy5I/exec\" -H \"Content-Type: text/plain\" -d '{\"\"\"\"guestType\"\"\"\":\"\"\"\"day\"\"\"\",\"\"\"\"firstName\"\"\"\":\"\"\"\"Test\"\"\"\",\"\"\"\"lastName\"\"\"\":\"\"\"\"Guest\"\"\"\",\"\"\"\"dietary\"\"\"\":\"\"\"\"None\"\"\"\",\"\"\"\"mealChoice\"\"\"\":\"\"\"\"Chicken\"\"\"\"}')",
+      "Bash(curl -s -L -X POST \"https://script.google.com/macros/s/AKfycbyaOyDfAuHX2uqmbu_lE376957c3RIZFsTMXuCWppSK1j_LqAEJLEud85tYCajm67Lw/exec\" -H \"Content-Type: text/plain\" -d '{\"\"guestType\"\":\"\"day\"\",\"\"firstName\"\":\"\"Test\"\",\"\"lastName\"\":\"\"Guest\"\",\"\"dietary\"\":\"\"None\"\",\"\"mealChoice\"\":\"\"Chicken\"\"}')",
+      "Bash(curl -s -L \"https://script.google.com/macros/s/AKfycbyaOyDfAuHX2uqmbu_lE376957c3RIZFsTMXuCWppSK1j_LqAEJLEud85tYCajm67Lw/exec\")",
+      "Bash(curl -s -X POST \"https://script.google.com/macros/s/AKfycbyaOyDfAuHX2uqmbu_lE376957c3RIZFsTMXuCWppSK1j_LqAEJLEud85tYCajm67Lw/exec\" -H \"Content-Type: application/json\" -d '{\"\"guestType\"\":\"\"day\"\",\"\"firstName\"\":\"\"Test\"\",\"\"lastName\"\":\"\"Guest\"\",\"\"dietary\"\":\"\"None\"\",\"\"mealChoice\"\":\"\"Chicken\"\"}' -o /dev/null -w \"%{http_code}\\\\n%{redirect_url}\")"
     ]
   }
 }
