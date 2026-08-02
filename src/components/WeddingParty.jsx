@@ -1,13 +1,13 @@
 import './WeddingParty.css'
 
 const party = [
-  { name: 'Faye', role: 'Maid of Honour', side: 'bride' },
+  { name: 'Faye', role: 'Maid of Honour', side: 'bride', image: '/Images/faye-bw.jpg' },
   { name: 'Bizz', role: 'Bridesmaid', side: 'bride' },
   { name: 'Fran', role: 'Best Man', side: 'groom' },
   { name: 'Ben', role: 'Best Man', side: 'groom' },
   { name: 'Matt', role: 'Groomsman', side: 'groom' },
   { name: 'Alfie', role: 'Groomsman', side: 'groom' },
-  { name: 'Dave', role: 'Groomsman', side: 'groom' },
+  { name: 'Dave', role: 'Groomsman', side: 'groom', image: '/Images/dave-bw.jpg' },
   { name: 'Podge', role: 'Groomsman', side: 'groom' },
 ]
 
@@ -25,7 +25,9 @@ export default function WeddingParty() {
           {party.map(p => (
             <div key={p.name} className="party__member">
               <div className="party__avatar">
-                <span>{getInitials(p.name)}</span>
+                {p.image
+                  ? <img src={p.image} alt={p.name} />
+                  : <span>{getInitials(p.name)}</span>}
               </div>
               <h3 className="party__name">{p.name}</h3>
               <p className="party__role">{p.role}</p>
