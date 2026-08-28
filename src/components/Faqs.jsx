@@ -22,10 +22,6 @@ const faqs = [
     q: 'Is the bar cash or card?',
     a: 'The bar runs a card only bar so cash will not be accepted on the day.',
   },
-  {
-    q: 'Who do I contact on the day?',
-    a: 'Bizz, Faye, Ben or Fran.',
-  },
 ]
 
 export default function Faqs() {

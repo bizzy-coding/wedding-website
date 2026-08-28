@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Anna and Michael Wedding//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:anna-michael-wedding-20270821@wyresdalepark
+DTSTAMP:20260101T000000Z
+DTSTART:20270821T120000Z
+DTEND:20270821T233000Z
+SUMMARY:Anna & Michael’s Wedding
+LOCATION:Wyresdale Park\, Long Lane\, Scorton\, Preston\, PR3 1BT
+DESCRIPTION:Guests arrive from 1pm. Ceremony begins at 2pm. Carriages at 12.30am.
+END:VEVENT
+END:VCALENDAR

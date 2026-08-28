@@ -15,8 +15,8 @@ export default function BigDay() {
             </svg>
             <h3>When</h3>
             <p className="bigday__detail">Saturday 21st August 2027</p>
-            <p className="bigday__sub">Ceremony begins at 2pm</p>
             <p className="bigday__sub">Guests arrive from 1pm</p>
+            <p className="bigday__sub">Ceremony begins at 2pm</p>
           </div>
 
           <div className="bigday__card">
@@ -36,6 +36,7 @@ export default function BigDay() {
             </svg>
             <h3>Dress Code</h3>
             <p className="bigday__detail">Formal</p>
+            <p className="bigday__sub">Wedding attire, we all know what that means</p>
           </div>
         </div>
       </section>

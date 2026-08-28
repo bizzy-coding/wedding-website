@@ -48,12 +48,29 @@
   width: 100%;
 }
 
+/* Stop the fixed nav covering a section's title when jumping via nav links */
+.section-wrap[id] {
+  scroll-margin-top: 90px;
+}
+
 .section-wrap--alt {
   background: var(--bg-section-alt);
 }
 
 .section-wrap--white {
   background: var(--bg-section);
+}
+
+/* ---------------------------------------------------------------------------
+   TEMPORARY: Our Story hidden pending confirmation that it's being dropped.
+   Hidden in CSS only. The component is still mounted in App.jsx and all its
+   content is intact, so deleting this one block brings it straight back.
+   To remove it for good instead: delete <OurStory /> from App.jsx, the
+   'Our Story' entry from navLinks in Nav.jsx, and the OurStory files.
+--------------------------------------------------------------------------- */
+#our-story,
+.nav__links li:has(a[href="#our-story"]) {
+  display: none;
 }
 
 /* Divider */

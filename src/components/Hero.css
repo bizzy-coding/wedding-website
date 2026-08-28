@@ -57,6 +57,13 @@
   margin-bottom: 32px;
 }
 
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
 .hero__cta {
   display: inline-block;
   padding: 14px 48px;
@@ -145,6 +152,10 @@
 
   .hero__cta {
     align-self: center;
+  }
+
+  .hero__actions {
+    justify-content: center;
   }
 
   .hero__doodle--champagne {

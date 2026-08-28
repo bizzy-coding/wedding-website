@@ -1,3 +1,4 @@
+import AddToCalendar from './AddToCalendar'
 import './Hero.css'
 
 export default function Hero() {
@@ -10,17 +11,20 @@ export default function Hero() {
       <div className="hero__content">
         <p className="hero__save-the-date">Save the Date</p>
         <h1 className="hero__title">
-          Anna & Merdz<br />
+          Anna & Michael<br />
           <span className="hero__subtitle">are getting married!</span>
         </h1>
         <p className="hero__date">Saturday 21st August 2027</p>
-        <p className="hero__venue">Wyresdale Park, Scorton</p>
+        <p className="hero__venue">Wyresdale Park, Long Lane, Scorton, PR3 1BT</p>
         <div className="hero__heart">
           <svg width="32" height="28" viewBox="0 0 32 28" fill="none" stroke="currentColor" strokeWidth="1.5">
             <path d="M16 26s-12-7.5-12-15C4 5.5 7.5 2 11 2c2.5 0 4.5 1.5 5 3 .5-1.5 2.5-3 5-3 3.5 0 7 3.5 7 9 0 7.5-12 15-12 15z" />
           </svg>
         </div>
-        <a href="#rsvp" className="hero__cta">RSVP</a>
+        <div className="hero__actions">
+          <a href="#rsvp" className="hero__cta">RSVP</a>
+          <AddToCalendar />
+        </div>
       </div>
 
       {/* Hand-drawn decorations */}

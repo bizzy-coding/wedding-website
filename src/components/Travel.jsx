@@ -1,3 +1,5 @@
+import LocalStays from './LocalStays'
+import VenueMap from './VenueMap'
 import './Travel.css'
 
 export default function Travel() {
@@ -16,7 +18,9 @@ export default function Travel() {
             </svg>
             <h3>Getting There</h3>
             <p className="travel__address">Wyresdale Park, Long Lane,<br />Scorton, PR3 1BT</p>
-            <p className="travel__note">Nearest airport/train: Poulton-Le-Fylde</p>
+            <p className="travel__note">Nearest station: Lancaster (about 20 minutes by taxi)</p>
+            <p className="travel__note">Flying in? Manchester Airport has a direct train to Lancaster, roughly 1hr 20</p>
+            <VenueMap />
           </div>
 
           {/* Accommodation */}
@@ -26,13 +30,14 @@ export default function Travel() {
               <path d="M14 30V20h8v10" />
             </svg>
             <h3>Accommodation</h3>
-            <p>On-site accommodation for the night of the wedding is available from 3pm.</p>
+            <p>On-site accommodation for the night of the wedding is available from 3pm for those who are staying on site.</p>
             <p className="travel__note">Check in at the bar where staff will pass on the codes for entry.</p>
             <div className="travel__morning">
               <h4>The Morning After</h4>
               <p>Check out from all accommodation is 10am.</p>
-              <p>Breakfast will be served at 9.30am.</p>
+              <p>Breakfast will be available onsite from 9.30am if you wish.</p>
             </div>
+            <LocalStays />
           </div>
 
           {/* Getting Home */}
@@ -43,7 +48,7 @@ export default function Travel() {
               <path d="M10 24v3M26 24v3" />
             </svg>
             <h3>Getting Home</h3>
-            <p>Last orders at the bar at 12.30am. We recommend pre-booking taxis &mdash; the venue is rural.</p>
+            <p>Last orders at the bar at 12.30am. We recommend pre-booking taxis as the venue is rural.</p>
 
             <div className="travel__taxis">
               <h4>Suggested Taxis</h4>

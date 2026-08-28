@@ -21,7 +21,7 @@ const milestones = [
   },
   {
     year: '2026',
-    text: "We brought home our puppy, Sally Cinnamon \u2014 our proudest and most chaotic journey yet.",
+    text: "We brought home our puppy, Sally Cinnamon. Our proudest and most chaotic journey yet.",
     image: '/Images/IMG_3223.jpg',
     alt: 'Anna and Merdz snorkelling',
   },
@@ -36,7 +36,7 @@ export default function OurStory() {
         <p className="our-story__intro">
           Along the way came several years of great parties, questionable dance moves,
           and a firm belief that &ldquo;one more drink&rdquo; is always a good idea. Mike brings the
-          music and Anna brings the alcohol &mdash; a dangerously good combination.
+          music and Anna brings the alcohol, a dangerously good combination.
         </p>
         <div className="our-story__timeline">
           {milestones.map((m, i) => (

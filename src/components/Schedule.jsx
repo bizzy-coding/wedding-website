@@ -5,7 +5,7 @@ const events = [
   { time: '2:00 PM', label: 'Ceremony', icon: 'rings' },
   { time: '2:30 PM', label: 'Reception', icon: 'champagne' },
   { time: '3:30 PM', label: 'Dinner & Speeches', icon: 'dinner' },
-  { time: '5:30 PM', label: 'Cocktail Hour', icon: 'cocktail' },
+  { time: '5:30 PM', label: 'Cake Cutting', icon: 'cake' },
   { time: '6:30 PM', label: 'Dancing', icon: 'music' },
   { time: '12:30 AM', label: 'Carriages', icon: 'moon' },
 ]
@@ -22,8 +22,8 @@ function TimelineIcon({ type }) {
       return <svg {...props}><path d="M10 14L12 4h4l2 10M9 14q5 3 10 0M14 17v7M10 24h8" /><path d="M6 3l-2 2M22 3l2 2M14 2v-1" /></svg>
     case 'dinner':
       return <svg {...props}><circle cx="14" cy="16" r="8" /><path d="M14 8v-5M10 3v6M18 3c0 3-2 4-2 6" /></svg>
-    case 'cocktail':
-      return <svg {...props}><path d="M7 4h14l-7 10v7M10 25h8" /><path d="M7 4l3 4h8l3-4" /><circle cx="18" cy="8" r="1" /></svg>
+    case 'cake':
+      return <svg {...props}><path d="M5 24h18v-7a3 3 0 00-3-3H8a3 3 0 00-3 3v7z" /><path d="M14 11V7" /><path d="M12 5l2-2 2 2" /><path d="M5 19q4.5 3 9 0t9 0" /></svg>
     case 'music':
       return <svg {...props}><path d="M10 22V8l12-4v14" /><circle cx="10" cy="22" r="3" /><circle cx="22" cy="18" r="3" /></svg>
     case 'moon':
