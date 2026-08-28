@@ -51,6 +51,18 @@
   color: var(--sage-300);
 }
 
+/* Drop the native select arrow for the same chevron the disclosures use,
+   so the two controls sitting next to each other match. */
+.rsvp__field select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 46px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none' stroke='%232E3F35' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M5 8l5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 20px 20px;
+}
+
 .rsvp__radio-group {
   display: flex;
   gap: 12px;
@@ -102,6 +114,154 @@
   font-weight: 600;
   color: var(--sage-600);
   padding: 0 8px;
+}
+
+.rsvp__attending {
+  display: flex;
+  gap: 8px;
+}
+
+.rsvp__attending-btn {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1.5px solid var(--sage-200);
+  border-radius: 8px;
+  background: white;
+  color: var(--text-light);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.rsvp__attending-btn:hover {
+  border-color: var(--sage-400);
+}
+
+.rsvp__attending-btn--active {
+  border-color: var(--sage-600);
+  background: var(--sage-100);
+  color: var(--sage-700);
+  font-weight: 600;
+}
+
+.rsvp__again {
+  margin-top: 24px;
+  padding: 11px 24px;
+  background: none;
+  border: 1.5px solid var(--sage-300);
+  border-radius: 8px;
+  color: var(--sage-700);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.rsvp__again:hover {
+  border-color: var(--sage-600);
+  background: var(--sage-100);
+}
+
+/* Dietary sits behind a disclosure so meal selection stays the primary ask.
+   Scaled down from the Travel-section defaults to suit a form row. */
+.rsvp__disclosure .disclosure {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+.rsvp__disclosure .disclosure__toggle {
+  padding: 12px 16px;
+  border: 1.5px solid var(--sage-200);
+  border-radius: 8px;
+  background: white;
+}
+
+.rsvp__disclosure .disclosure__toggle:hover {
+  border-color: var(--sage-400);
+}
+
+.rsvp__disclosure .disclosure__title {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--sage-600);
+}
+
+.rsvp__disclosure .disclosure__sub {
+  font-size: 12px;
+}
+
+.rsvp__disclosure .disclosure__panel {
+  padding: 4px 4px 0;
+}
+
+.rsvp__dietary {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 14px 16px 4px;
+}
+
+.rsvp__checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.rsvp__checkbox input {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  border: 1.5px solid var(--sage-300);
+  border-radius: 4px;
+  background: white;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.rsvp__checkbox input:checked {
+  border-color: var(--sage-600);
+  background: var(--sage-600);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3.5 8.5l3 3 6-6'/%3E%3C/svg%3E");
+  background-size: 14px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.rsvp__checkbox:hover input {
+  border-color: var(--sage-400);
+}
+
+.rsvp__dietary-other {
+  margin-top: 4px;
+  padding: 12px 16px;
+  border: 1.5px solid var(--sage-200);
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--text-heading);
+  background: white;
+  transition: border-color 0.2s;
+  outline: none;
+}
+
+.rsvp__dietary-other:focus {
+  border-color: var(--sage-400);
+}
+
+.rsvp__dietary-other::placeholder {
+  color: var(--sage-300);
 }
 
 .rsvp__submit {

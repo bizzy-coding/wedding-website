@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './Rsvp.css'
 
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyaOyDfAuHX2uqmbu_lE376957c3RIZFsTMXuCWppSK1j_LqAEJLEud85tYCajm67Lw/exec'
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw6oPp16_AUJWep2aZl3HGuSpSpQN-OXfNyf1nFElKA30Fd3DAVsCk9SvZZhMCHi-y2/exec'
 
 export default function EveningRsvp() {
   const [form, setForm] = useState({
@@ -29,7 +29,7 @@ export default function EveningRsvp() {
       await fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
         mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
         body: JSON.stringify(payload),
       })
       setStatus('success')
