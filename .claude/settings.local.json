@@ -22,7 +22,15 @@
       "Bash(curl -v -L -X POST \"https://script.google.com/macros/s/AKfycbyUOhMO15obJ06GNDNXvZCjxdRQjbth8FJiFxk-J985s7G9_BIlCMLJiKwoDDvYy5I/exec\" -H \"Content-Type: text/plain\" -d '{\"\"\"\"guestType\"\"\"\":\"\"\"\"day\"\"\"\",\"\"\"\"firstName\"\"\"\":\"\"\"\"Test\"\"\"\",\"\"\"\"lastName\"\"\"\":\"\"\"\"Guest\"\"\"\",\"\"\"\"dietary\"\"\"\":\"\"\"\"None\"\"\"\",\"\"\"\"mealChoice\"\"\"\":\"\"\"\"Chicken\"\"\"\"}')",
       "Bash(curl -s -L -X POST \"https://script.google.com/macros/s/AKfycbyaOyDfAuHX2uqmbu_lE376957c3RIZFsTMXuCWppSK1j_LqAEJLEud85tYCajm67Lw/exec\" -H \"Content-Type: text/plain\" -d '{\"\"guestType\"\":\"\"day\"\",\"\"firstName\"\":\"\"Test\"\",\"\"lastName\"\":\"\"Guest\"\",\"\"dietary\"\":\"\"None\"\",\"\"mealChoice\"\":\"\"Chicken\"\"}')",
       "Bash(curl -s -L \"https://script.google.com/macros/s/AKfycbyaOyDfAuHX2uqmbu_lE376957c3RIZFsTMXuCWppSK1j_LqAEJLEud85tYCajm67Lw/exec\")",
-      "Bash(curl -s -X POST \"https://script.google.com/macros/s/AKfycbyaOyDfAuHX2uqmbu_lE376957c3RIZFsTMXuCWppSK1j_LqAEJLEud85tYCajm67Lw/exec\" -H \"Content-Type: application/json\" -d '{\"\"guestType\"\":\"\"day\"\",\"\"firstName\"\":\"\"Test\"\",\"\"lastName\"\":\"\"Guest\"\",\"\"dietary\"\":\"\"None\"\",\"\"mealChoice\"\":\"\"Chicken\"\"}' -o /dev/null -w \"%{http_code}\\\\n%{redirect_url}\")"
+      "Bash(curl -s -X POST \"https://script.google.com/macros/s/AKfycbyaOyDfAuHX2uqmbu_lE376957c3RIZFsTMXuCWppSK1j_LqAEJLEud85tYCajm67Lw/exec\" -H \"Content-Type: application/json\" -d '{\"\"guestType\"\":\"\"day\"\",\"\"firstName\"\":\"\"Test\"\",\"\"lastName\"\":\"\"Guest\"\",\"\"dietary\"\":\"\"None\"\",\"\"mealChoice\"\":\"\"Chicken\"\"}' -o /dev/null -w \"%{http_code}\\\\n%{redirect_url}\")",
+      "Bash(sips --help)",
+      "Bash(sips -g pixelWidth -g pixelHeight /Users/Biz/Documents/Coding/Wedding-Website/public/Images/Faye.jpg /Users/Biz/Documents/Coding/Wedding-Website/public/Images/Fowler.PNG)",
+      "Bash(pip3 install *)",
+      "Bash(python3)",
+      "Bash(git -C /Users/Biz/Documents/Coding/Wedding-Website status)",
+      "Bash(git -C /Users/Biz/Documents/Coding/Wedding-Website remote -v)",
+      "Bash(git -C /Users/Biz/Documents/Coding/Wedding-Website log --oneline -5)",
+      "Bash(git -C /Users/Biz/Documents/Coding/Wedding-Website diff public/favicon.svg src/components/WeddingParty.jsx)"
     ]
   }
 }

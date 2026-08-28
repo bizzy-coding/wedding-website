@@ -2,13 +2,13 @@ import './WeddingParty.css'
 
 const party = [
   { name: 'Faye', role: 'Maid of Honour', side: 'bride', image: '/Images/faye-bw.jpg' },
-  { name: 'Bizz', role: 'Bridesmaid', side: 'bride' },
-  { name: 'Fran', role: 'Best Man', side: 'groom' },
-  { name: 'Ben', role: 'Best Man', side: 'groom' },
-  { name: 'Matt', role: 'Groomsman', side: 'groom' },
-  { name: 'Alfie', role: 'Groomsman', side: 'groom' },
-  { name: 'Dave', role: 'Groomsman', side: 'groom', image: '/Images/dave-bw.jpg' },
-  { name: 'Podge', role: 'Groomsman', side: 'groom' },
+  { name: 'Bizz', role: 'Bridesmaid', side: 'bride', image: '/Images/bizz-bw.jpg' },
+  { name: 'Fran', role: 'Best Man', side: 'groom', image: '/Images/fran-bw.jpg' },
+  { name: 'Ben', role: 'Best Man', side: 'groom', image: '/Images/ben-bw.jpg' },
+  { name: 'Matt', role: 'Best Man', side: 'groom', image: '/Images/matt-bw.jpg' },
+  { name: 'Alfie', role: 'Best Man', side: 'groom', image: '/Images/alfie-bw.jpg' },
+  { name: 'Dave', role: 'Best Man', side: 'groom', image: '/Images/dave-bw.jpg' },
+  { name: 'Arthur', role: 'Best Man', side: 'groom', image: '/Images/arthur-bw.jpg' },
 ]
 
 function getInitials(name) {
