@@ -28,6 +28,7 @@ var SHEETS = {
 var COLUMNS = {
   day: [
     ['timestamp', 'Timestamp'],
+    ['guestType', 'Guest Type'],
     ['attending', 'Attending'],
     ['firstName', 'First Name'],
     ['lastName', 'Last Name'],
@@ -36,13 +37,17 @@ var COLUMNS = {
     ['mealChoice', 'Meal Choice'],
     ['dietary', 'Dietary Requirements'],
   ],
+  // No meal choice: evening guests arrive after dinner. Dietary still matters
+  // for the evening food.
   evening: [
     ['timestamp', 'Timestamp'],
+    ['guestType', 'Guest Type'],
     ['attending', 'Attending'],
     ['firstName', 'First Name'],
     ['lastName', 'Last Name'],
     ['email', 'Email'],
     ['phone', 'Phone'],
+    ['dietary', 'Dietary Requirements'],
   ],
 };
 
@@ -64,6 +69,9 @@ function doPost(e) {
     var headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
 
     data.timestamp = new Date();
+    // Written into its own column as well as picking the sheet, so the two tabs
+    // can be merged or filtered without losing which invitation it was.
+    data.guestType = guestType === 'evening' ? 'Evening' : 'Day';
     // Older submissions predate the attending field; treat them as attending.
     if (!data.attending) data.attending = 'Yes';
 

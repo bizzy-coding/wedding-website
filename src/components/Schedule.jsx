@@ -6,7 +6,7 @@ const events = [
   { time: '2:30 PM', label: 'Reception', icon: 'champagne' },
   { time: '3:30 PM', label: 'Dinner & Speeches', icon: 'dinner' },
   { time: '5:30 PM', label: 'Cake Cutting', icon: 'cake' },
-  { time: '6:30 PM', label: 'Dancing', icon: 'music' },
+  { time: '6:30 PM', label: 'Dancing & Evening Guest Arrival', icon: 'music' },
   { time: '12:30 AM', label: 'Carriages', icon: 'moon' },
 ]
 

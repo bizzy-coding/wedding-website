@@ -14,15 +14,18 @@
 
 .bigday__icon {
   color: var(--sage-600);
-  margin-bottom: 16px;
+  margin-bottom: 6px;
 }
 
+/* Icon and heading read as one unit, so they sit tight together and the
+   detail block gets the breathing room instead. */
 .bigday__card h3 {
   font-family: var(--font-accent);
   font-size: 28px;
   font-weight: 600;
+  line-height: 1.15;
   color: var(--sage-700);
-  margin-bottom: 12px;
+  margin-bottom: 24px;
 }
 
 .bigday__detail {

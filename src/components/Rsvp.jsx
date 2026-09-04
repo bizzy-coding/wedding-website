@@ -33,17 +33,23 @@ const emptyForm = {
 }
 
 export default function Rsvp() {
+  // null until the guest tells us which invitation they're holding. Day guests
+  // get a meal choice; evening guests don't, since they arrive after dinner.
+  const [guestType, setGuestType] = useState(null)
   const [form, setForm] = useState(emptyForm)
   const [attending, setAttending] = useState(true)
   const [dietary, setDietary] = useState([])
   const [dietaryOther, setDietaryOther] = useState('')
   const [status, setStatus] = useState('idle')
 
+  const isDay = guestType === 'day'
+
   function handleChange(e) {
     setForm(prev => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
   function resetForm() {
+    setGuestType(null)
     setForm(emptyForm)
     setAttending(true)
     setDietary([])
@@ -74,8 +80,9 @@ export default function Rsvp() {
       attending: attending ? 'Yes' : 'No',
       // Food answers are meaningless for a decline
       dietary: attending ? dietaryText : '',
-      mealChoice: attending ? form.mealChoice : '',
-      guestType: 'day',
+      // Evening guests never pick a meal, so never send a stale one
+      mealChoice: attending && isDay ? form.mealChoice : '',
+      guestType,
     }
 
     if (!GOOGLE_SCRIPT_URL) {
@@ -129,7 +136,45 @@ export default function Rsvp() {
         <p className="section-title">RSVP</p>
         <h2 className="section-heading">RSVP</h2>
 
+        {guestType === null && (
+          <div className="rsvp__choose">
+            <p className="rsvp__choose-intro">
+              Your invitation will tell you which one you are.
+            </p>
+            <div className="rsvp__choose-buttons">
+              <button
+                type="button"
+                className="rsvp__choose-btn"
+                onClick={() => setGuestType('day')}
+              >
+                <span className="rsvp__choose-btn-title">Day Guest</span>
+                <span className="rsvp__choose-btn-sub">From 1pm</span>
+              </button>
+              <button
+                type="button"
+                className="rsvp__choose-btn"
+                onClick={() => setGuestType('evening')}
+              >
+                <span className="rsvp__choose-btn-title">Evening Guest</span>
+                <span className="rsvp__choose-btn-sub">From 6:30pm</span>
+              </button>
+            </div>
+          </div>
+        )}
+
+        {guestType !== null && (
         <form className="rsvp__form" onSubmit={handleSubmit}>
+          <p className="rsvp__chosen">
+            {isDay ? 'Day guest' : 'Evening guest'}
+            <button
+              type="button"
+              className="rsvp__chosen-change"
+              onClick={() => setGuestType(null)}
+            >
+              Change
+            </button>
+          </p>
+
           <div className="rsvp__field">
             <input
               name="firstName" type="text" required
@@ -183,17 +228,19 @@ export default function Rsvp() {
 
           {attending && (
             <>
-              <div className="rsvp__field">
-                <select
-                  name="mealChoice" required
-                  value={form.mealChoice} onChange={handleChange}
-                >
-                  <option value="">MEAL SELECTION</option>
-                  {mealOptions.map(m => (
-                    <option key={m} value={m}>{m}</option>
-                  ))}
-                </select>
-              </div>
+              {isDay && (
+                <div className="rsvp__field">
+                  <select
+                    name="mealChoice" required
+                    value={form.mealChoice} onChange={handleChange}
+                  >
+                    <option value="">MEAL SELECTION</option>
+                    {mealOptions.map(m => (
+                      <option key={m} value={m}>{m}</option>
+                    ))}
+                  </select>
+                </div>
+              )}
 
               <div className="rsvp__disclosure">
                 <Disclosure
@@ -242,6 +289,7 @@ export default function Rsvp() {
             <p className="rsvp__error">Something went wrong. Please try again or contact us directly.</p>
           )}
         </form>
+        )}
       </section>
     </div>
   )

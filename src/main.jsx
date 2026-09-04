@@ -4,14 +4,17 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './index.css'
 import App from './App.jsx'
 import EveningRsvp from './components/EveningRsvp.jsx'
+import PasswordGate from './components/PasswordGate.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/evening" element={<EveningRsvp />} />
-      </Routes>
-    </BrowserRouter>
+    <PasswordGate>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="/evening" element={<EveningRsvp />} />
+        </Routes>
+      </BrowserRouter>
+    </PasswordGate>
   </StrictMode>,
 )

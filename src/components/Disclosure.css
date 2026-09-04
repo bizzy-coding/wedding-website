@@ -1,6 +1,6 @@
 .disclosure {
-  margin-top: 20px;
-  padding-top: 16px;
+  margin-top: 16px;
+  padding-top: 10px;
   border-top: 1px solid var(--sage-200);
   text-align: left;
 }
@@ -11,7 +11,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 10px 0;
+  padding: 4px 0;
   background: none;
   border: none;
   cursor: pointer;

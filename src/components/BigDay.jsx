@@ -27,7 +27,8 @@ export default function BigDay() {
             </svg>
             <h3>Where</h3>
             <p className="bigday__detail">Wyresdale Park</p>
-            <p className="bigday__sub">Long Lane, Scorton, PR3 1BT</p>
+            <p className="bigday__sub">Long Lane, Scorton</p>
+            <p className="bigday__sub">PR3 1BT</p>
           </div>
 
           <div className="bigday__card">
@@ -35,8 +36,8 @@ export default function BigDay() {
               <path d="M8 32 L8 14 L20 6 L32 14 L32 32 L24 32 L24 22 L16 22 L16 32 Z" />
             </svg>
             <h3>Dress Code</h3>
-            <p className="bigday__detail">Formal</p>
-            <p className="bigday__sub">Wedding attire, we all know what that means</p>
+            <p className="bigday__detail">Formal wear</p>
+            <p className="bigday__sub">Dress up and get ready to celebrate!</p>
           </div>
         </div>
       </section>
