@@ -10,12 +10,6 @@ const stays = [
     url: 'https://www.theprioryscorton.co.uk/',
   },
   {
-    name: 'Steeple View @ Snowhill Barn',
-    place: 'Scorton',
-    type: 'Studio apartment',
-    url: 'https://www.airbnb.co.uk/rooms/1094802847114964991',
-  },
-  {
     name: 'Royal Oak Hotel',
     place: 'Garstang',
     type: 'Hotel & pub',
