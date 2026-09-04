@@ -1,10 +1,12 @@
+/* No overflow clipping here: the Add to Calendar menu drops out of the hero on
+   mobile and would be cut off. The photo does its own clipping, and .app keeps
+   horizontal bleed in check. */
 .hero {
   min-height: 100vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
   background: var(--bg-hero);
   position: relative;
-  overflow: hidden;
 }
 
 .hero__content {
