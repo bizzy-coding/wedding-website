@@ -166,7 +166,7 @@
   background: var(--sage-100);
 }
 
-/* Dietary sits behind a disclosure so meal selection stays the primary ask.
+/* Dietary sits behind a disclosure so the core details stay the primary ask.
    Scaled down from the Travel-section defaults to suit a form row. */
 .rsvp__disclosure .disclosure {
   margin-top: 0;

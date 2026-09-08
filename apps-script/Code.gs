@@ -34,11 +34,8 @@ var COLUMNS = {
     ['lastName', 'Last Name'],
     ['email', 'Email'],
     ['phone', 'Phone'],
-    ['mealChoice', 'Meal Choice'],
     ['dietary', 'Dietary Requirements'],
   ],
-  // No meal choice: evening guests arrive after dinner. Dietary still matters
-  // for the evening food.
   evening: [
     ['timestamp', 'Timestamp'],
     ['guestType', 'Guest Type'],

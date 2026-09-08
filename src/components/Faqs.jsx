@@ -8,7 +8,7 @@ const faqs = [
   },
   {
     q: 'Can I bring a plus one?',
-    a: 'Your invite will state if you have a plus one.',
+    a: "We'd love to have everyone there if we could but unfortunately we can only accommodate those invited.",
   },
   {
     q: 'Are children invited?',

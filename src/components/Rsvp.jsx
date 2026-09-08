@@ -4,13 +4,6 @@ import './Rsvp.css'
 
 const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw6oPp16_AUJWep2aZl3HGuSpSpQN-OXfNyf1nFElKA30Fd3DAVsCk9SvZZhMCHi-y2/exec'
 
-const mealOptions = [
-  'Chicken',
-  'Beef',
-  'Vegetarian',
-  'Vegan',
-]
-
 const dietaryOptions = [
   'No dietary requirements',
   'Vegetarian',
@@ -29,12 +22,10 @@ const emptyForm = {
   lastName: '',
   email: '',
   phone: '',
-  mealChoice: '',
 }
 
 export default function Rsvp() {
-  // null until the guest tells us which invitation they're holding. Day guests
-  // get a meal choice; evening guests don't, since they arrive after dinner.
+  // null until the guest tells us which invitation they're holding.
   const [guestType, setGuestType] = useState(null)
   const [form, setForm] = useState(emptyForm)
   const [attending, setAttending] = useState(true)
@@ -80,8 +71,6 @@ export default function Rsvp() {
       attending: attending ? 'Yes' : 'No',
       // Food answers are meaningless for a decline
       dietary: attending ? dietaryText : '',
-      // Evening guests never pick a meal, so never send a stale one
-      mealChoice: attending && isDay ? form.mealChoice : '',
       guestType,
     }
 
@@ -228,20 +217,6 @@ export default function Rsvp() {
 
           {attending && (
             <>
-              {isDay && (
-                <div className="rsvp__field">
-                  <select
-                    name="mealChoice" required
-                    value={form.mealChoice} onChange={handleChange}
-                  >
-                    <option value="">MEAL SELECTION</option>
-                    {mealOptions.map(m => (
-                      <option key={m} value={m}>{m}</option>
-                    ))}
-                  </select>
-                </div>
-              )}
-
               <div className="rsvp__disclosure">
                 <Disclosure
                   title="Dietary requirements?"

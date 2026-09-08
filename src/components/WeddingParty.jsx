@@ -9,6 +9,8 @@ const party = [
   { name: 'Alfie', role: 'Best Man', side: 'groom', image: '/Images/alfie-bw.jpg' },
   { name: 'Dave', role: 'Best Man', side: 'groom', image: '/Images/dave-bw.jpg' },
   { name: 'Arthur', role: 'Best Man', side: 'groom', image: '/Images/arthur-bw.jpg' },
+  { name: 'Jimmy', role: 'Groomsman', side: 'groom', image: '/Images/jimmy-bw.jpg' },
+  { name: 'Harry', role: 'Page Boy', side: 'groom', image: '/Images/harry-bw.jpg' },
 ]
 
 function getInitials(name) {

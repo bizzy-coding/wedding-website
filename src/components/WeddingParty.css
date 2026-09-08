@@ -1,12 +1,16 @@
 .party__grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  /* Flex rather than grid so a part-full last row centres itself instead of
+     hugging the left edge. Widths below keep the four-across rhythm. */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 36px 24px;
   max-width: 700px;
   margin: 0 auto;
 }
 
 .party__member {
+  width: calc((100% - 3 * 24px) / 4);
   text-align: center;
 }
 
@@ -51,8 +55,11 @@
 
 @media (max-width: 768px) {
   .party__grid {
-    grid-template-columns: repeat(2, 1fr);
     gap: 28px 16px;
+  }
+
+  .party__member {
+    width: calc((100% - 16px) / 2);
   }
 
   .party__avatar {
