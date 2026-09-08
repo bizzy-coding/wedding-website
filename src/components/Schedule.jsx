@@ -3,10 +3,10 @@ import './Schedule.css'
 const events = [
   { time: '1:00 PM', label: 'Guests Arrive', icon: 'car' },
   { time: '2:00 PM', label: 'Ceremony', icon: 'rings' },
-  { time: '2:30 PM', label: 'Reception', icon: 'champagne' },
-  { time: '3:30 PM', label: 'Dinner & Speeches', icon: 'dinner' },
-  { time: '5:30 PM', label: 'Cake Cutting', icon: 'cake' },
-  { time: '6:30 PM', label: 'Dancing & Evening Guest Arrival', icon: 'music' },
+  { time: '2:45 PM', label: 'Reception', icon: 'champagne' },
+  { time: '4:30 PM', label: 'Dinner & Speeches', icon: 'dinner' },
+  { time: '7:00 PM', label: 'Cake Cutting', icon: 'cake' },
+  { time: '7:30 PM', label: 'Dancing & Evening Guest Arrival', icon: 'music' },
   { time: '12:30 AM', label: 'Carriages', icon: 'moon' },
 ]
 

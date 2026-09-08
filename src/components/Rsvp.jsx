@@ -145,7 +145,7 @@ export default function Rsvp() {
                 onClick={() => setGuestType('evening')}
               >
                 <span className="rsvp__choose-btn-title">Evening Guest</span>
-                <span className="rsvp__choose-btn-sub">From 6:30pm</span>
+                <span className="rsvp__choose-btn-sub">From 7:30pm</span>
               </button>
             </div>
           </div>
