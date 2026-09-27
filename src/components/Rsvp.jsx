@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Disclosure from './Disclosure'
+import advanceOnEnter from './advanceOnEnter'
 import './Rsvp.css'
 
 const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw6oPp16_AUJWep2aZl3HGuSpSpQN-OXfNyf1nFElKA30Fd3DAVsCk9SvZZhMCHi-y2/exec'
@@ -32,8 +33,19 @@ export default function Rsvp() {
   const [dietary, setDietary] = useState([])
   const [dietaryOther, setDietaryOther] = useState('')
   const [status, setStatus] = useState('idle')
+  const sectionRef = useRef(null)
 
   const isDay = guestType === 'day'
+
+  // The thank-you is far shorter than the form it replaces, so the scroll
+  // position that had the Send button in view now sits below the message.
+  // Pull the section back into view. scroll-margin-top on .section-wrap[id]
+  // keeps it clear of the fixed nav.
+  useEffect(() => {
+    if (status === 'success') {
+      sectionRef.current?.scrollIntoView({ block: 'start' })
+    }
+  }, [status])
 
   function handleChange(e) {
     setForm(prev => ({ ...prev, [e.target.name]: e.target.value }))
@@ -97,7 +109,7 @@ export default function Rsvp() {
 
   if (status === 'success') {
     return (
-      <div className="section-wrap section-wrap--white" id="rsvp">
+      <div className="section-wrap section-wrap--white" id="rsvp" ref={sectionRef}>
         <section className="section">
           <div className="rsvp__success">
             <svg width="56" height="56" viewBox="0 0 56 56" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -120,7 +132,7 @@ export default function Rsvp() {
   }
 
   return (
-    <div className="section-wrap section-wrap--white" id="rsvp">
+    <div className="section-wrap section-wrap--white" id="rsvp" ref={sectionRef}>
       <section className="section">
         <p className="section-title">RSVP</p>
         <h2 className="section-heading">RSVP</h2>
@@ -152,7 +164,7 @@ export default function Rsvp() {
         )}
 
         {guestType !== null && (
-        <form className="rsvp__form" onSubmit={handleSubmit}>
+        <form className="rsvp__form" onSubmit={handleSubmit} onKeyDown={advanceOnEnter}>
           <p className="rsvp__chosen">
             {isDay ? 'Day guest' : 'Evening guest'}
             <button
@@ -167,6 +179,7 @@ export default function Rsvp() {
           <div className="rsvp__field">
             <input
               name="firstName" type="text" required
+              enterKeyHint="next"
               value={form.firstName} onChange={handleChange}
               placeholder="FIRST NAME"
             />
@@ -175,6 +188,7 @@ export default function Rsvp() {
           <div className="rsvp__field">
             <input
               name="lastName" type="text" required
+              enterKeyHint="next"
               value={form.lastName} onChange={handleChange}
               placeholder="LAST NAME"
             />
@@ -183,6 +197,7 @@ export default function Rsvp() {
           <div className="rsvp__field">
             <input
               name="email" type="email" required
+              enterKeyHint="next"
               value={form.email} onChange={handleChange}
               placeholder="EMAIL"
             />
@@ -191,6 +206,7 @@ export default function Rsvp() {
           <div className="rsvp__field">
             <input
               name="phone" type="tel"
+              enterKeyHint={dietary.includes(OTHER) ? 'next' : 'done'}
               value={form.phone} onChange={handleChange}
               placeholder="PHONE (OPTIONAL)"
             />
@@ -239,6 +255,7 @@ export default function Rsvp() {
                       <input
                         className="rsvp__dietary-other"
                         type="text"
+                        enterKeyHint="done"
                         value={dietaryOther}
                         onChange={e => setDietaryOther(e.target.value)}
                         placeholder="PLEASE SPECIFY"

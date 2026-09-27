@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import './Rsvp.css'
+import advanceOnEnter from './advanceOnEnter'
 
 const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw6oPp16_AUJWep2aZl3HGuSpSpQN-OXfNyf1nFElKA30Fd3DAVsCk9SvZZhMCHi-y2/exec'
 
@@ -9,6 +10,15 @@ export default function EveningRsvp() {
     lastName: '',
   })
   const [status, setStatus] = useState('idle')
+  const pageRef = useRef(null)
+
+  // Same swap as the main RSVP: the short thank-you leaves the page scrolled
+  // past it if the form was submitted from the bottom.
+  useEffect(() => {
+    if (status === 'success') {
+      pageRef.current?.scrollIntoView({ block: 'start' })
+    }
+  }, [status])
 
   function handleChange(e) {
     setForm(prev => ({ ...prev, [e.target.name]: e.target.value }))
@@ -40,7 +50,7 @@ export default function EveningRsvp() {
 
   if (status === 'success') {
     return (
-      <div className="evening-rsvp">
+      <div className="evening-rsvp" ref={pageRef}>
         <div className="rsvp__success">
           <svg width="56" height="56" viewBox="0 0 56 56" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <circle cx="28" cy="28" r="24" />
@@ -54,7 +64,7 @@ export default function EveningRsvp() {
   }
 
   return (
-    <div className="evening-rsvp">
+    <div className="evening-rsvp" ref={pageRef}>
       <div className="evening-rsvp__card">
         <h1 className="evening-rsvp__logo">A & M</h1>
         <h2 className="section-heading">Evening RSVP</h2>
@@ -62,10 +72,11 @@ export default function EveningRsvp() {
           We&rsquo;d love for you to join us for the evening celebration!
         </p>
 
-        <form className="rsvp__form" onSubmit={handleSubmit}>
+        <form className="rsvp__form" onSubmit={handleSubmit} onKeyDown={advanceOnEnter}>
           <div className="rsvp__field">
             <input
               name="firstName" type="text" required
+              enterKeyHint="next"
               value={form.firstName} onChange={handleChange}
               placeholder="FIRST NAME"
             />
@@ -74,6 +85,7 @@ export default function EveningRsvp() {
           <div className="rsvp__field">
             <input
               name="lastName" type="text" required
+              enterKeyHint="done"
               value={form.lastName} onChange={handleChange}
               placeholder="LAST NAME"
             />
